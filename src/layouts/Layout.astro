@@ -23,19 +23,60 @@ const { title } = Astro.props;
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sono:wght@200..800&display=swap');
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: #34679B;
+		--accent-light: #88bbcc;
+		--accent-dark: #070F2B;
+		--white: #f1f3e9;
+		--dark: #363635;
 		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		45deg,
+		var(--accent),
+		var(--accent-light) 30%,
+		white 60%,
+);
 	}
 	html {
 		font-family: "Josefin Sans", sans-serif;
-		background: #363635;
+		background: var(--dark);
+		color: #f1f3e9;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	main{
+		margin: auto;
+		padding: 1rem;
+		width: 900px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	
+	header{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: .8rem;
+	margin-bottom: 6rem;
+	}	
+
+	header a {
+		color: var(--white);
+		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		justify-content:right;
+	}
+	nav a {
+		margin-right: 1rem;
+	}
+
+	nav a:hover {
+		color: var(--accent);
 	}
 	code {
 		font-family:
