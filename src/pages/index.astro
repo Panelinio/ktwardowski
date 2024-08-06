@@ -1,51 +1,57 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Strona główna">
-	<main>
-		<header>
-			<a href="/">kTwardowski</a>
-			<nav>
-				<a href="/portfolio/">Portfolio</a>
-				<a href="/contact/">Contact</a>
-				<a href="/blog/">Blog</a>
-			</nav>
-		</header>
-		<article>
-			<section class="left">
-				<h1>Cześć, jestem Kacper</h1>
-				<p>
-					Programista, który lubi tworzyć nowe rzeczy. Na co dzień pracuję jako <strong>Web Developer</strong> i <strong>Graphic Designer</strong>, a w wolnym czasie rozwijam swoje umiejętności w innych dziedzinach IT.
-				</p>
-			</section>
-			<section class="right">
+  <main>
+    <header>
+      <div class="web">
+        <a href="/">Kacper Twardowski</a>
+        <p>Web Developer & Graphic Designer</p>
+      </div>
+      <nav>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/contact/">Contact</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <article class="landing">
+      <section class="left">
+        <h1>Cześć, jestem <span>Kacper</span></h1>
+        <p>
+          Programista, który lubi tworzyć nowe rzeczy. Na co dzień pracuję jako <strong
+            >Web Developer</strong
+          > i <strong>Graphic Designer</strong>, a w wolnym czasie rozwijam
+          swoje umiejętności w innych dziedzinach IT.
+        </p>
+      </section>
+      <section class="right"></section>
+    </article>
+	<article class="">
 
-			</section>
-		</article>
-	</main>
+	</article>
+  </main>
 </Layout>
 
 <style>
+  h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1em;
+    text-wrap: balance;
+  }
 
-	h1 {
-		font-size: 3.4rem;
-		font-weight: 700;
-		line-height: 1;
-		margin-bottom: 1em;
-		text-wrap: balance;
-	}
+  .left {
+	width: 30%;
+	padding-right: 1rem;
+  }
+  .right {
+	width: 70%;
+  }
 
-	.left, .right {
-		width: 50%;
-	}
-
-	p {
-		font-size: 1.25rem;
-		line-height: 1.5;
-		max-width: 65ch;
-		text-wrap: balance;
-	}
-
+  span, strong {
+	color: var(--accent);
+  }
 </style>
