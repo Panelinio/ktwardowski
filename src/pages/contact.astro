@@ -51,8 +51,12 @@ import Card from "../components/Card.astro";
     margin-bottom: 2rem;
   }
 
+  strong {
+    color: var(--accent);
+  }
+
   h1 {
-    font-size: 2.4rem;
+    font-size: 2.45rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1em;
@@ -81,10 +85,31 @@ import Card from "../components/Card.astro";
     margin-bottom: 1rem;
   }
   .left ul li a {
-    color: var(--accent);
+    position: relative;
+    display: inline-block;
     text-decoration: none;
+    color: var(--accent-white);
+    transition: all 0.2s ease-out 0.5ms;
   }
+
   .left ul li a:hover {
-    text-decoration: underline;
+    color: var(--accent);
+  }
+
+  .left ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    left: 0;
+    background: var(--accent);
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+
+  .left ul li a:hover::after {
+    width: 100%;
+    left: 0;
   }
 </style>
