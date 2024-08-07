@@ -12,7 +12,7 @@ import Card from "../components/Card.astro";
       </div>
       <nav>
         <a href="/portfolio/">Portfolio</a>
-        <a href="/contact/">Contact</a>
+        <a href="/contact/">Kontakt</a>
         <a href="/blog/">Blog</a>
       </nav>
     </header>
@@ -20,10 +20,9 @@ import Card from "../components/Card.astro";
       <section class="left">
         <h1>Cześć, jestem <span>Kacper</span></h1>
         <p>
-          Programista, który lubi tworzyć nowe rzeczy. Na co dzień pracuję jako <strong
+          Wielbiciel kawy, muzyki rockowej i kreskówek. Na co dzień pracuję jako <strong
             >Web Developer</strong
-          > i <strong>Graphic Designer</strong>, a w wolnym czasie rozwijam
-          swoje umiejętności w innych dziedzinach IT.
+          > i <strong>Graphic Designer</strong>, a w wolnym czasie oddaję się rysunkom i siłowni.
         </p>
       </section>
       <section class="right"></section>
@@ -42,15 +41,16 @@ import Card from "../components/Card.astro";
     margin-bottom: 1em;
     text-wrap: balance;
   }
-
+  .landing {
+     display: flex; 
+  }
   .left {
-	width: 30%;
+	width: 40%;
 	padding-right: 1rem;
   }
   .right {
-	width: 70%;
+	width: 60%;
   }
-
   span, strong {
 	color: var(--accent);
   }

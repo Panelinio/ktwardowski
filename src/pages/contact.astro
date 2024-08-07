@@ -12,20 +12,79 @@ import Card from "../components/Card.astro";
       </div>
       <nav>
         <a href="/portfolio/">Portfolio</a>
-        <a href="/contact/">Contact</a>
+        <a href="/contact/">Kontakt</a>
         <a href="/blog/">Blog</a>
       </nav>
     </header>
-    <h1>Kontakt</h1>
+    <article class="landing">
+      <section class="left">
+        <h1>
+          „Dzielenie się <b>herbatą</b> z fascynującym nieznajomym to jedna z <b>prawdziwych rozkoszy</b> życia”
+        </h1>
+        <p>
+          Dlatego też zapraszam Cię na przysłowiową herbatę - jeśli masz pytania, chcesz porozmawiać lub nawiązać współpracę, napisz do mnie. Chętnie odpowiem na każdego maila.
+        </p>
+        <ul>
+          <li>
+            <strong>Email: </strong><a href="mailto:kacper.tw150@gmail.com">kacper.tw150@gmail.com</a>
+          </li>
+          <li>
+            <strong>Linkedin: </strong><a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/">Kacper Twardowski</a>
+          </li>
+          <li>
+            <strong>Instagram: </strong><a href="https://www.instagram.com/_ktwardowski_/">@_ktwardowski_</a>
+          </li>
+          <li>
+            <strong>GitHub: </strong><a href="https://github.com/Panelinio">Panelinio</a>
+          </li>
+        </ul>
+      </section>
+      <section class="right">
+
+      </section>
+    </article>
   </main>
 </Layout>
 
 <style>
+  header {
+    margin-bottom: 2rem;
+  }
+
   h1 {
-    font-size: 4rem;
+    font-size: 2.4rem;
     font-weight: 700;
-    line-height: 1;
-    text-align: center;
+    line-height: 1.2;
     margin-bottom: 1em;
+  }
+  .landing {
+    display: flex;
+  }
+  .left{
+	width: 60%;
+	padding-right: 1rem;
+  }
+  .right {
+    width: 40%;
+  }
+  b {
+    color: var(--accent);
+  }
+  .left p{
+    margin-bottom: 2em;
+  }
+  .left ul {
+    list-style: none;
+    padding: 0;
+  }
+  .left ul li {
+    margin-bottom: 1rem;
+  }
+  .left ul li a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .left ul li a:hover {
+    text-decoration: underline;
   }
 </style>
