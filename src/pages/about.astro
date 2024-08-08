@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+---
+
+<Layout title="O mnie">
+  <main>
+    <article class="landing">
+      <section class="left">
+        <h1>Kilka słów o mnie</h1>
+        <p>
+          Pochodzę z Dolnego Śląska, tam też ukończyłem technikum informatyczne. Odkąd w moim domu pojawił się komputer zacząłem twozyć swoje prace w Paincie.
+          Moje pierwsze aplikacje tworzyłem w Scratchu, jednakże byłem ukierunkowany ku grafice właśnie.
+        </p>
+      </section>
+      <section class="right">
+
+      </section>
+    </article>
+    <article class="landing-blue">
+      <section class="leftb">
+
+      </section>
+      <section class="rightb">
+        <p>
+          W gimnazjum udało mi się kupić mój pierwszy komputer. Pierwsze prace graficzne tworzyłem metodą "szkicownik-skaner-myszka".
+        Dopiero w technikum, gdzie też poznałem technologie webowe, zainwestowałem w tablet graficzny. Oba sprzęty służą mi do dzisiaj.
+        </p>
+      </section>
+    </article>
+    <article class="landing">
+      <section class="left">
+        <p>
+          Dzięki studiom informatycznym na Uniwersytecie WSB we Wrocławiu oraz forum Pasja-Informatyki zanurzyłem się w programowaniu.
+          Rozwinąłem także wiedzę z zakresu sprzętu komputerowego i cyberbezpieczeństwa. Dzięki kursom i zleceniom 
+        </p>
+      </section>
+      <section class="right">
+
+      </section>
+    </article>
+  </main>
+</Layout>
+
+<style>
+    h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1em;
+    text-wrap: balance;
+  }
+
+  .landing {
+    display: flex;
+    height: 80vh;
+  }
+  .left{
+	width: 60%;
+	padding-right: 1rem;
+  }
+  .right {
+    width: 40%;
+  }
+  .landing-blue {
+    display: flex;
+    background-color: var(--accent);
+    width: 100%;
+    padding: 2rem 0;
+    height: 60vh;
+  }
+  .leftb {
+    width: 60%;
+  }
+  .rightb {
+    width: 40%;
+    padding-right: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
