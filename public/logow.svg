@@ -23,8 +23,8 @@
      inkscape:deskcolor="#505050"
      showguides="true"
      inkscape:zoom="2.8284271"
-     inkscape:cx="129.75409"
-     inkscape:cy="14.672466"
+     inkscape:cx="130.10765"
+     inkscape:cy="43.31029"
      inkscape:window-width="1920"
      inkscape:window-height="1111"
      inkscape:window-x="-9"
@@ -74,6 +74,13 @@
             path { fill: #FFF; }
         }
     </style>
+  <rect
+     style="fill:#f1f3e9;fill-opacity:1;stroke-width:12.533"
+     id="rect1"
+     width="128"
+     height="128"
+     x="0"
+     y="0" />
   <g
      id="g1">
     <path
