@@ -8,29 +8,40 @@ import Card from "../components/Card.astro";
     <article class="landing">
       <section class="left">
         <h1>
-          „Dzielenie się <b>herbatą</b> z fascynującym nieznajomym to jedna z <b>prawdziwych rozkoszy</b> życia”
+          „Dzielenie się <b>herbatą</b> z fascynującym nieznajomym to jedna z <b
+            >prawdziwych rozkoszy</b
+          > życia”
         </h1>
         <p>
-          Dlatego też zapraszam Cię na przysłowiową herbatę - jeśli masz pytania, chcesz porozmawiać lub nawiązać współpracę, napisz do mnie. Chętnie odpowiem na każdego maila.
+          Dlatego też zapraszam Cię na przysłowiową herbatę - jeśli masz
+          pytania, chcesz porozmawiać lub nawiązać współpracę, napisz do mnie.
+          Chętnie odpowiem na każdego maila.
         </p>
         <ul>
           <li>
-            <strong>Email: </strong><a href="mailto:kacper.tw150@gmail.com">kacper.tw150@gmail.com</a>
+            <strong>Email: </strong><a href="mailto:kacper.tw150@gmail.com"
+              >kacper.tw150@gmail.com</a
+            >
           </li>
           <li>
-            <strong>Linkedin: </strong><a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/">Kacper Twardowski</a>
+            <strong>Linkedin: </strong><a
+              href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/"
+              >Kacper Twardowski</a
+            >
           </li>
           <li>
-            <strong>Instagram: </strong><a href="https://www.instagram.com/_ktwardowski_/">@_ktwardowski_</a>
+            <strong>Instagram: </strong><a
+              href="https://www.instagram.com/_ktwardowski_/">@_ktwardowski_</a
+            >
           </li>
           <li>
-            <strong>GitHub: </strong><a href="https://github.com/Panelinio">Panelinio</a>
+            <strong>GitHub: </strong><a href="https://github.com/Panelinio"
+              >Panelinio</a
+            >
           </li>
         </ul>
       </section>
-      <section class="right">
-
-      </section>
+      <section class="right"></section>
     </article>
   </main>
 </Layout>
@@ -53,9 +64,9 @@ import Card from "../components/Card.astro";
   .landing {
     display: flex;
   }
-  .left{
-	width: 60%;
-	padding-right: 1rem;
+  .left {
+    width: 60%;
+    padding-right: 1rem;
   }
   .right {
     width: 40%;
@@ -63,7 +74,7 @@ import Card from "../components/Card.astro";
   b {
     color: var(--accent);
   }
-  .left p{
+  .left p {
     margin-bottom: 2em;
   }
   .left ul {
@@ -86,7 +97,7 @@ import Card from "../components/Card.astro";
   }
 
   .left ul li a::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
@@ -94,7 +105,9 @@ import Card from "../components/Card.astro";
     margin-top: 2px;
     left: 0;
     background: var(--accent);
-    transition: width 0.4s ease, left 0.4s ease;
+    transition:
+      width 0.4s ease,
+      left 0.4s ease;
   }
 
   .left ul li a:hover::after {
