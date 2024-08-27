@@ -17,45 +17,67 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <img src="/logo.svg" alt="Logo" class="logo"/>
     <header>
-      <div class="web">
-        <a href="/">Kacper Twardowski</a>
-        <p>Web Developer & Graphic Designer</p>
+      <img src="/logo.svg" alt="Logo" class="logo"/>
+      <div class="inside">
+        <div class="web">
+          <a href="/">Kacper Twardowski</a>
+          <p>Web Developer & Graphic Designer</p>
+        </div>
+        <nav>
+          <a href="/">Strona główna</a>
+          <a href="/about/">O mnie</a>
+          <a href="/portfolio/">Portfolio</a>
+          <a href="/contact/">Kontakt</a>
+        </nav>
       </div>
-      <nav>
-        <a href="/">Strona główna</a>
-        <a href="/about/">O mnie</a>
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/contact/">Kontakt</a>
-      </nav>
     </header>
     <slot />
     <footer>
-      <h3>-Kacper Twardowski | 2024-</h3>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/">Linkedin</a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/_ktwardowski_/">Instagram</a>
-        </li>
-        <li>
-          <a href="https://github.com/Panelinio">GitHub</a>
-        </li>
-        <li>
-          <a href="mailto:kacper.tw150@gmail.com">Mail</a>
-        </li>
-      </ul>
+      <div class="fleft">
+        <ul>
+          <li>
+            <a href="/">Strona główna</a>
+          </li>
+          <li>
+            <a href="/about/">O mnie</a>
+          </li>
+          <li>
+            <a href="/portfolio/">Portfolio</a>
+          </li>
+          <li>
+            <a href="/contact/">Kontakt</a>
+          </li>
+        </ul>
+        <h4>-Kacper Twardowski 2024-</h4>
+      </div>
+      <div class="fright">
+        <h4>Znajdź mnie w sieci</h4>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/">Linkedin</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/_ktwardowski_/">Instagram</a>
+          </li>
+          <li>
+            <a href="https://github.com/Panelinio">GitHub</a>
+          </li>
+          <li>
+            <a href="mailto:kacper.tw150@gmail.com">Mail</a>
+          </li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sono:wght@200..800&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
   :root {
-    --accent: rgb(52, 103, 155);
-    --accent-light: rgb(136, 187, 204);
-    --accent-dark: rgb(7, 15, 43);
+    --accent: #18C3CC;
+    --accent-light: #a2e7ea;
+    --accent-dark: #34679b;
     --white: #f1f3e9;
     --dark: #20201f;
     --accent-gradient: linear-gradient(
@@ -66,7 +88,7 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Fira Code", monospace;
     background-color: var(--dark);
     color: var(--white);
     scroll-behavior: smooth;
@@ -74,39 +96,72 @@ const { title } = Astro.props;
 
   footer {
     margin-top: auto;
-    padding: 40px;
-    letter-spacing: 2px;
-    text-align: center;
-    background-color: var(--accent);
+    padding: 0px 180px 0px 180px;
+    height: 200px;
+    letter-spacing: 1.5px;
+    background-color: var(--accent-dark);
     font-size: 1.5rem;
-  }
-  
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
 
-  footer a {
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('/halftonekt.svg') repeat;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+footer * {
+    position: relative;
+    z-index: 1;
+}
+
+.fleft, .fright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+footer a {
     display: block;
     margin-top: 5px;
     color: var(--white);
     text-decoration: none;
-    font-size: 1rem;
-    margin: 0.5rem;
-  }
+    font-size: 1.1rem;
+    margin: 0.2rem;
+    font-weight: 400;
+}
 
-  footer ul {
+footer ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 5px;
     display: flex;
     justify-content: center;
-  }
+}
 
-  footer ul li {
+footer ul li {
     margin: 0 10px;
-  }
+}
+
+footer h4 {
+    font-size: 1.3rem;
+    margin: 0.5rem 1rem;
+}
 
   .logo {
-    width: 80px;
-    height: 80px;
-    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin-left: 1rem;
   }
 
   body {
@@ -118,17 +173,16 @@ const { title } = Astro.props;
     margin: auto;
     margin-bottom: 1.4rem;
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.6;
     min-height: 95vh;
   }
 
   header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 6rem;
-    width: 75%;
+    justify-content: space-between;
+    width: 100%;
     margin: 0 auto;
     top: 0;
     background-color: var(--dark);
@@ -160,15 +214,23 @@ const { title } = Astro.props;
     left: 0;
   }
 
+  .inside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
   .web {
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem 0rem 0rem;
+    padding: 1.3rem 1rem 0rem 0rem;
     color: var(--accent);
   }
 
   .web a {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
     text-decoration: none;
@@ -184,7 +246,8 @@ const { title } = Astro.props;
   nav {
     display: flex;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-right: 1rem;
   }
 
   nav a {
@@ -197,16 +260,53 @@ const { title } = Astro.props;
   }
 
   p {
-    font-size: 1.6rem;
-    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 350;
     max-width: 65ch;
     text-wrap: balance;
   }
+
+  h1 {
+    font-size: 3.1rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1em;
+    text-wrap: balance;
+  }
+
   .landing {
      display: flex; 
      padding-top: 6rem;
      margin: 0rem 12rem 0rem 12rem;
+     height: 80vh;
   }
+  
+
+  .left {
+    width: 50%;
+    padding-right: 1rem;
+  }
+  .right {
+    width: 50%;
+  }
+  .landing-blue {
+    display: flex;
+    background-color: var(--accent-dark);
+    width: 100%;
+    padding: 2rem 0;
+    height: 90vh;
+  }
+  .leftb {
+    width: 60%;
+  }
+  .rightb {
+    width: 40%;
+    padding-right: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .left {
 	width: 40%;
 	padding-right: 1rem;
@@ -218,6 +318,29 @@ const { title } = Astro.props;
 	color: var(--accent);
   }
   
+  button {
+      background-color: var(--white);
+      border: none;
+      border-radius: 0.5rem;
+      color: var(--dark);
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.2s ease-out;
+    }
+
+    button:hover {
+      background-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    button a {
+      color: var(--dark);
+      text-decoration: none;
+    }
+
   code {
     font-family:
       Menlo,
@@ -242,7 +365,7 @@ const { title } = Astro.props;
   /* Firefox */
   * {
     scrollbar-width: auto;
-    scrollbar-color: var(--accent-light) var(--dark);
+    scrollbar-color: var(--accent) var(--dark);
   }
 
   /* Chrome, Edge, and Safari */
@@ -255,6 +378,6 @@ const { title } = Astro.props;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: var(--accent-light);
+    background-color: var(--accent);
   }
 </style>

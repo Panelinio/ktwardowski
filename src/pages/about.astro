@@ -11,7 +11,7 @@ import Card from "../components/Card.astro";
         <p>
           Pochodzę z Dolnego Śląska, tam też ukończyłem technikum informatyczne.
           Odkąd w moim domu pojawił się komputer zacząłem tworzyć swoje prace w
-          Paint'cie. Pierwsze aplikacje budowałem w Scratchu, jednak od zawsze
+          Paint'cie. <br><br>Pierwsze aplikacje budowałem w Scratchu, jednak od zawsze
           ciągnęło mnie do grafiki. Pasja do kreskówek i gier komputerowych
           zainspirowała mnie do stworzenia własnej serii komiksów, którą
           rozwijam do dziś. Stale mam nowe pomysły na różne wątki i historie.
@@ -48,7 +48,7 @@ import Card from "../components/Card.astro";
           wiedzy informatycznej. W międzyczasie przygotowywałem swoje portfolio
           oraz przyjmowałem mniejsze zlecenia graficzne. Udzielałem się też na
           forach internetowych, gdzie pomagałem innym w ich problemach z
-          komputerami czy programowaniem. Aktualnie nie mam zamiaru się
+          komputerami czy programowaniem. <br><br>Aktualnie nie mam zamiaru się
           zatrzymywać - jeszcze wiele nauki i marzeń do spełnienia przede mną.
         </p>
       </section>
@@ -58,11 +58,11 @@ import Card from "../components/Card.astro";
 </Layout>
 
 <style>
-  h1 {
-    font-size: 3.4rem;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 1em;
+
+  p{
+    font-size: 1.2rem;
+    font-weight: 350;
+    max-width: 65ch;
     text-wrap: balance;
   }
 
@@ -79,7 +79,7 @@ import Card from "../components/Card.astro";
   }
   .landing-blue {
     display: flex;
-    background-color: var(--accent);
+    background-color: var(--accent-dark);
     width: 100%;
     padding: 2rem 0;
     height: 90vh;
