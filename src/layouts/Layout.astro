@@ -18,7 +18,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <header>
-      <img src="/logo.svg" alt="Logo" class="logo"/>
+      <img src="/logo.svg" alt="Logo" class="logo" />
       <div class="inside">
         <div class="web">
           <a href="/">Kacper Twardowski</a>
@@ -55,7 +55,9 @@ const { title } = Astro.props;
         <h4>Znajdź mnie w sieci</h4>
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/">Linkedin</a>
+            <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/"
+              >Linkedin</a
+            >
           </li>
           <li>
             <a href="https://www.instagram.com/_ktwardowski_/">Instagram</a>
@@ -73,9 +75,9 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sono:wght@200..800&display=swap");
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
   :root {
-    --accent: #18C3CC;
+    --accent: #18c3cc;
     --accent-light: #a2e7ea;
     --accent-dark: #34679b;
     --white: #f1f3e9;
@@ -94,6 +96,16 @@ const { title } = Astro.props;
     scroll-behavior: smooth;
   }
 
+  .waves {
+    position: absolute; /* Position waves absolutely within .landing */
+    bottom: -30px; /* Align waves to the bottom of .landing */
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -10px; /* Fix for safari gap */
+    min-height: 100px;
+    max-height: 150px;
+  }
+
   footer {
     margin-top: auto;
     padding: 0px 180px 0px 180px;
@@ -105,33 +117,55 @@ const { title } = Astro.props;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
-}
+  }
 
-footer::before {
+  footer::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 200%;
     height: 200%;
-    background: url('/halftonekt.svg') repeat;
+    background: url("/halftonekt.svg") repeat;
     opacity: 0.05;
     z-index: 0;
-}
+  }
 
-footer * {
+  .landing {
+    display: flex;
+    padding-top: 6rem;
+    margin: 0;
+    height: 80vh;
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Add overflow hidden */
+  }
+
+  .landing::before {
+    content: "";
+    bottom: -200px;
+    left: 800px;
+    position: absolute;
+    width: 75%; /* Increase width */
+    height: 75%; /* Increase height */
+    background: url("/halfball.svg") no-repeat;
+    background-size: cover; /* Ensure the background covers the entire area */
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  footer * {
     position: relative;
     z-index: 1;
-}
+  }
 
-.fleft, .fright {
+  .fleft,
+  .fright {
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
+  }
 
-
-footer a {
+  footer a {
     display: block;
     margin-top: 5px;
     color: var(--white);
@@ -139,24 +173,24 @@ footer a {
     font-size: 1.1rem;
     margin: 0.2rem;
     font-weight: 400;
-}
+  }
 
-footer ul {
+  footer ul {
     list-style: none;
     padding: 0;
     margin: 5px;
     display: flex;
     justify-content: center;
-}
+  }
 
-footer ul li {
+  footer ul li {
     margin: 0 10px;
-}
+  }
 
-footer h4 {
+  footer h4 {
     font-size: 1.3rem;
     margin: 0.5rem 1rem;
-}
+  }
 
   .logo {
     width: 75px;
@@ -187,7 +221,7 @@ footer h4 {
     top: 0;
     background-color: var(--dark);
     z-index: 1000;
-    box-shadow: inset 0 -1px 0 0 var(--accent);
+    box-shadow: inset 0 -1px 0 0 var(--accent-dark);
   }
 
   header nav a {
@@ -198,7 +232,7 @@ footer h4 {
   }
 
   header nav a::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
@@ -206,7 +240,9 @@ footer h4 {
     margin-top: 2px;
     left: 0;
     background: var(--accent);
-    transition: width 0.4s ease, left 0.4s ease;
+    transition:
+      width 0.4s ease,
+      left 0.4s ease;
   }
 
   header nav a:hover::after {
@@ -226,13 +262,12 @@ footer h4 {
     display: flex;
     flex-direction: column;
     padding: 1.3rem 1rem 0rem 0rem;
-    color: var(--accent);
   }
 
   .web a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-dark);
     text-decoration: none;
   }
 
@@ -274,17 +309,10 @@ footer h4 {
     text-wrap: balance;
   }
 
-  .landing {
-     display: flex; 
-     padding-top: 6rem;
-     margin: 0rem 12rem 0rem 12rem;
-     height: 80vh;
-  }
-  
-
   .left {
     width: 50%;
     padding-right: 1rem;
+    margin-left: 12rem;
   }
   .right {
     width: 50%;
@@ -296,6 +324,7 @@ footer h4 {
     padding: 2rem 0;
     height: 90vh;
   }
+
   .leftb {
     width: 60%;
   }
@@ -308,38 +337,39 @@ footer h4 {
   }
 
   .left {
-	width: 40%;
-	padding-right: 1rem;
+    width: 40%;
+    padding-right: 1rem;
   }
   .right {
-	width: 60%;
+    width: 60%;
   }
-  span, strong {
-	color: var(--accent);
+  span,
+  strong {
+    color: var(--accent);
   }
-  
+
   button {
-      background-color: var(--white);
-      border: none;
-      border-radius: 0.5rem;
-      color: var(--dark);
-      cursor: pointer;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 0rem;
-      padding: 0.5rem 1rem;
-      transition: all 0.2s ease-out;
-    }
+    background-color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-out;
+  }
 
-    button:hover {
-      background-color: var(--accent);
-      transform: scale(1.1);
-    }
+  button:hover {
+    background-color: var(--accent);
+    transform: scale(1.1);
+  }
 
-    button a {
-      color: var(--dark);
-      text-decoration: none;
-    }
+  button a {
+    color: var(--dark);
+    text-decoration: none;
+  }
 
   code {
     font-family:
