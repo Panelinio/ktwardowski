@@ -125,6 +125,18 @@ import Card from "../components/Card.astro";
       text-decoration: none;
       cursor: pointer;
     }
+
+    @container main (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      button{
+        margin-left: 0.5rem;
+        width: 29%;
+        font-size: 0.9rem;
+      }
+    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", () => {

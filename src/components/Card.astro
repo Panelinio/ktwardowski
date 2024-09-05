@@ -66,6 +66,16 @@ const { src, title, body } = Astro.props;
     border-radius: 6px;
     cursor: pointer;
   }
+  
+  @container main (max-width: 768px) {
+    .link-card {
+      width: 70%;
+    }
+
+    .image img {
+      width: 100%;
+    }
+  }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {

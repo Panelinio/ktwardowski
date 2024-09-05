@@ -112,4 +112,35 @@ import Card from "../components/Card.astro";
     width: 100%;
     left: 0;
   }
+
+  @container main (max-width: 768px) {
+    .landing {
+      flex-direction: column;
+    }
+    .left {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    p{
+      font-size: 0.8rem;
+    }
+
+    h1{
+      font-size: 1.4rem;
+    }
+
+    .left ul li a {
+      font-size: 0.9rem;
+    }
+
+    .left ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      font-size: 1rem;
+    }
+    
+  }
 </style>

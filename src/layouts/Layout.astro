@@ -290,7 +290,7 @@ const { title } = Astro.props;
   }
 
   .menu.active {
-      height: 230px;
+      height: 250px;
     }
 
   .menuNav{
@@ -470,6 +470,84 @@ const { title } = Astro.props;
     background-color: var(--accent);
   }
 
+  @container main (max-width: 1200px) {
+
+    .right, .leftb {
+      display: none;
+    }
+
+    .web a{
+      font-size: 1.3rem;
+    }
+
+    .web p{
+      font-size: 1rem;
+    }
+
+    nav{
+      font-size: 0.8rem;
+    }
+
+    nav a{
+      margin-left: 1.5rem;
+    }
+
+    .landing{
+      height: 100vh;
+      padding-top: 2rem;
+    }
+
+    .landing::before, .landingDown::before{
+      left: 500px;
+      bottom: -370px;
+    }
+
+    h1{
+      font-size: 2.3rem;
+      margin-top: 1rem;
+    }
+
+    .left p{
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .left, .rightb{
+      width: 100%;
+      padding: 1rem;
+      margin: 2rem;
+    }
+
+    footer{
+      padding: 0 1rem 0 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 300px;
+    }
+
+    footer h4{
+      font-size: 1rem;
+    }
+
+    footer a{
+      font-size: 0.9rem;
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li{
+      margin: 5px;
+    }
+
+}
+
+
   @container main (max-width: 768px) {
     .web, nav, .right, .leftb {
       display: none;
@@ -517,6 +595,7 @@ const { title } = Astro.props;
       padding-top: 2rem;
     }
 
+
     h1{
       font-size: 2.3rem;
       margin-top: 1rem;
@@ -533,16 +612,26 @@ const { title } = Astro.props;
       margin: 0.5rem;
     }
 
+    .landingDown, .landing-blue{
+      height: 100vh;
+      padding: 2rem 0 2rem 0;
+    }
+
+    .desc p{
+      display: none;
+    }
+
     footer{
-      padding: 0px 20px 0px 20px;
+      padding: 0;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      height: 350px;
+      height: 300px;
     }
 
     footer h4{
-      font-size: 1rem;
+      font-size: 0.6rem;
+      margin: 0.5rem 0.5rem;
     }
 
     footer a{
@@ -559,6 +648,5 @@ const { title } = Astro.props;
     footer ul li{
       margin: 5px;
     }
-
 }
 </style>
