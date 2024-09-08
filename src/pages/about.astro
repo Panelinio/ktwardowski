@@ -7,7 +7,7 @@ import Card from "../components/Card.astro";
   <main>
     <article class="landing">
       <section class="left">
-        <h1>Kilka słów o mnie</h1>
+        <h1>Kilka <span>słów</span> o mnie</h1>
         <p>
           Pochodzę z Dolnego Śląska, tam też ukończyłem technikum informatyczne.
           Odkąd w moim domu pojawił się komputer zacząłem tworzyć swoje prace w
@@ -37,7 +37,7 @@ import Card from "../components/Card.astro";
         </p>
       </section>
     </article>
-    <article class="landing">
+    <article class="landingDown">
       <section class="left">
         <p>
           Trafiłem jednak do pracy w agencji reklamowej i sprzedaży detalicznej.
@@ -50,8 +50,9 @@ import Card from "../components/Card.astro";
           informatycznej. W międzyczasie przygotowywałem swoje portfolio oraz przyjmowałem
           mniejsze zlecenia graficzne. Udzielałem się też na forach internetowych,
           gdzie pomagałem innym w ich problemach z komputerami czy programowaniem.
-          <br /><br />Aktualnie nie mam zamiaru się zatrzymywać - jeszcze wiele
-          nauki i marzeń do spełnienia przede mną.
+        </p><p>
+          Aktualnie nie mam zamiaru się zatrzymywać - jeszcze wiele nauki i
+          marzeń do spełnienia przede mną.
         </p>
       </section>
       <section class="right"></section>
@@ -65,5 +66,11 @@ import Card from "../components/Card.astro";
     font-weight: 350;
     max-width: 65ch;
     text-wrap: balance;
+  }
+
+  @container main (max-width: 768px) {
+    p{
+      font-size: 0.8rem;
+    }
   }
 </style>

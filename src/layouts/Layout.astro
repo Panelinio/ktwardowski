@@ -12,24 +12,37 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/ktwardowski/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <header>
-      <img src="/logo.svg" alt="Logo" class="logo" />
+      <img src="/ktwardowski/logo.svg" alt="Logo" class="logo" />
       <div class="inside">
         <div class="web">
-          <a href="/">Kacper Twardowski</a>
+          <a href="/ktwardowski/">Kacper Twardowski</a>
           <p>Web Developer & Graphic Designer</p>
         </div>
         <nav>
-          <a href="/">Strona główna</a>
-          <a href="/about/">O mnie</a>
-          <a href="/portfolio/">Portfolio</a>
-          <a href="/contact/">Kontakt</a>
+          <a href="/ktwardowski/">Strona główna</a>
+          <a href="/ktwardowski/about/">O mnie</a>
+          <a href="/ktwardowski/portfolio/">Portfolio</a>
+          <a href="/ktwardowski/contact/">Kontakt</a>
         </nav>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menuNav">
+          <a href="/ktwardowski/">Strona główna</a>
+          <a href="/ktwardowski/about/">O mnie</a>
+          <a href="/ktwardowski/portfolio/">Portfolio</a>
+          <a href="/ktwardowski/contact/">Kontakt</a>
+        </div>
       </div>
     </header>
     <slot />
@@ -37,16 +50,16 @@ const { title } = Astro.props;
       <div class="fleft">
         <ul>
           <li>
-            <a href="/">Strona główna</a>
+            <a href="/ktwardowski/">Strona główna</a>
           </li>
           <li>
-            <a href="/about/">O mnie</a>
+            <a href="/ktwardowski/about/">O mnie</a>
           </li>
           <li>
-            <a href="/portfolio/">Portfolio</a>
+            <a href="/ktwardowski/portfolio/">Portfolio</a>
           </li>
           <li>
-            <a href="/contact/">Kontakt</a>
+            <a href="/ktwardowski/contact/">Kontakt</a>
           </li>
         </ul>
         <h4>-Kacper Twardowski 2024-</h4>
@@ -73,11 +86,16 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+<script>
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".menu").classList.toggle("active");
+  });
+</script>
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sono:wght@200..800&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
   :root {
-    --accent: #18c3cc;
+    --accent: #3fd7fe;
     --accent-light: #a2e7ea;
     --accent-dark: #34679b;
     --white: #f1f3e9;
@@ -96,18 +114,7 @@ const { title } = Astro.props;
     scroll-behavior: smooth;
   }
 
-  .waves {
-    position: absolute; /* Position waves absolutely within .landing */
-    bottom: -30px; /* Align waves to the bottom of .landing */
-    width: 100%;
-    height: 15vh;
-    margin-bottom: -10px; /* Fix for safari gap */
-    min-height: 100px;
-    max-height: 150px;
-  }
-
   footer {
-    margin-top: auto;
     padding: 0px 180px 0px 180px;
     height: 200px;
     letter-spacing: 1.5px;
@@ -140,7 +147,17 @@ const { title } = Astro.props;
     overflow: hidden; /* Add overflow hidden */
   }
 
-  .landing::before {
+  .landingDown {
+    display: flex;
+    padding-top: 6rem;
+    margin: 0;
+    height: 90vh;
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Add overflow hidden */
+  }
+
+  .landing::before,
+  .landingDown::before {
     content: "";
     bottom: -200px;
     left: 800px;
@@ -173,6 +190,11 @@ const { title } = Astro.props;
     font-size: 1.1rem;
     margin: 0.2rem;
     font-weight: 400;
+    transition: all 0.2s ease-out 0.5ms;
+  }
+
+  footer a:hover {
+    color: var(--dark);
   }
 
   footer ul {
@@ -201,11 +223,11 @@ const { title } = Astro.props;
   body {
     margin: 0;
     padding: 0;
+    container: main / inline-size;
   }
 
   main {
     margin: auto;
-    margin-bottom: 1.4rem;
     width: 100%;
     font-size: 15px;
     line-height: 1.6;
@@ -248,6 +270,38 @@ const { title } = Astro.props;
   header nav a:hover::after {
     width: 100%;
     left: 0;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .menu{
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background-color: var(--accent-dark);
+    width: 40%;
+    height: 0; /* Use max-height instead of height */
+    overflow: hidden; /* Hide overflow */
+    z-index: 1000;
+    transition: height 0.5s ease;
+  }
+
+  .menu.active {
+      height: 250px;
+    }
+
+  .menuNav{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
   }
 
   .inside {
@@ -330,10 +384,20 @@ const { title } = Astro.props;
   }
   .rightb {
     width: 40%;
-    padding-right: 12rem;
+    padding: 2rem 12rem 1rem 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+  }
+
+  .left p, .rightb p{
+      margin-bottom: 3rem;
+    }
+
+  h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
   }
 
   .left {
@@ -410,4 +474,191 @@ const { title } = Astro.props;
   *::-webkit-scrollbar-thumb {
     background-color: var(--accent);
   }
+
+  @container main (max-width: 1200px) {
+
+    .right, .leftb {
+      display: none;
+    }
+
+    .web a{
+      font-size: 1.3rem;
+    }
+
+    .web p{
+      font-size: 1rem;
+    }
+
+    nav{
+      font-size: 0.8rem;
+    }
+
+    nav a{
+      margin-left: 1.5rem;
+    }
+
+    .landing{
+      height: 100vh;
+      padding-top: 2rem;
+    }
+
+    .landing::before, .landingDown::before{
+      left: 500px;
+      bottom: -370px;
+    }
+
+    h1{
+      font-size: 2.3rem;
+      margin-top: 1rem;
+    }
+
+    .left p{
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .left, .rightb{
+      width: 100%;
+      padding: 1rem;
+      margin: 2rem;
+    }
+
+    footer{
+      padding: 0 1rem 0 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4{
+      font-size: 1rem;
+    }
+
+    footer a{
+      font-size: 0.9rem;
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li{
+      margin: 5px;
+    }
+
+}
+
+
+  @container main (max-width: 768px) {
+    .web, nav, .right, .leftb {
+      display: none;
+    }
+
+    .inside {
+      justify-content: end;
+    }
+
+    .hamburger {
+      display: flex;
+      height: 22px;
+      width: 22px;
+    }
+
+    .hamburger .line {
+      width: 100%;
+      height: 3px;
+      background-color: var(--white);
+      border-radius: 5px;
+    }
+
+    .menu{
+      display: block;
+    }
+
+    .menuNav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .menuNav a{
+      margin: 0rem;
+      color: var(--white);
+      font-size: 1.1rem;
+      padding: 0.8rem;
+      text-decoration: none;
+    }
+
+    .landing{
+      height: 100vh;
+      padding-top: 2rem;
+    }
+
+    .landing::before, .landingDown::before{
+      left: 200px;
+      bottom: -270px;
+    }
+
+
+    h1{
+      font-size: 2.3rem;
+      margin-top: 1rem;
+    }
+
+    .left p, .rightb p{
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .left, .rightb {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem;
+    }
+
+    .landingDown, .landing-blue{
+      height: 100vh;
+      padding: 2rem 0 2rem 0;
+    }
+
+    .desc p{
+      display: none;
+    }
+
+    footer{
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4{
+      font-size: 0.6rem;
+      margin: 1rem 0.5rem;
+    }
+
+    footer a{
+      font-size: 0.7rem;
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li{
+      margin: 5px;
+    }
+}
 </style>
