@@ -19,3 +19,4 @@ What helped me:
 * [MDN](https://developer.mozilla.org/en-US/)
 * [Weronika Wolska](https://weronikawolska.pl/)
 * [Crocoder.pl](https://crocoder.pl/)
+* [Przeprogramowani.pl](https://przeprogramowani.pl/)
