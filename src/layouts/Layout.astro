@@ -1,19 +1,5 @@
----
-interface Props {
-  title: string;
-}
-const { title } = Astro.props;
-
-import LanguagePicker from '../components/LanguagePicker.astro';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
----
-
 <!doctype html>
-<html lang="{lang}">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Web Developer & Graphic Designer" />
@@ -21,21 +7,21 @@ const translatePath = useTranslatedPath(lang);
     <link rel="icon" type="image/svg+xml" href="/ktwardowski/favicon.svg" />
     <meta name="generator" content="Kacper Twardowski" />
     <meta name="author" content="Kacper Twardowski" />
-    <title>Kacper Twardowski - {title}</title>
+    <title>Kacper Twardowski</title>
   </head>
   <body>
     <header>
-      <a href="/ktwardowski/" aria-label=" {t('nav.home')}"><img src="/ktwardowski/logo.svg" alt="Logo" class="logo" aria-label="Logo" /></a>
+      <img src="/ktwardowski/logo.svg" alt="Logo" class="logo" aria-label="Logo" />
       <div class="inside">
         <div class="web">
-          <a href="/ktwardowski/" aria-label=" {t('nav.home')}">Kacper Twardowski</a>
+          <a href="/ktwardowski/" aria-label="Strona główna">Kacper Twardowski</a>
           <p>Web Developer & Graphic Designer</p>
         </div>
         <nav>
-          <a href="/ktwardowski/${lang}/" aria-label=" {t('nav.home')}">{t('nav.home')}</a>
-          <a href="/ktwardowski/${lang}/about/" aria-label="{t('nav.about')}">{t('nav.about')}</a>
-          <a href="/ktwardowski/${lang}/portfolio/" aria-label="Portfolio">Portfolio</a>
-          <a href="/ktwardowski/${lang}/contact/" aria-label="{t('nav.contact')}">{t('nav.contact')}</a>
+          <a href="/ktwardowski/" aria-label="Strona główna">Strona główna</a>
+          <a href="/ktwardowski/about/" aria-label="O mnie">O mnie</a>
+          <a href="/ktwardowski/portfolio/" aria-label="Portfolio">Portfolio</a>
+          <a href="/ktwardowski/contact/" aria-label="Kontakt">Kontakt</a>
         </nav>
         <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
           <div class="line"></div>
@@ -44,12 +30,11 @@ const translatePath = useTranslatedPath(lang);
         </div>
       </div>
       <div class="menu">
-        <LanguagePicker />
         <div class="menuNav">
-          <a href="/ktwardowski/${lang}/" aria-label=" {t('nav.home')}"> {t('nav.home')}</a>
-          <a href="/ktwardowski/${lang}/about/" aria-label="{t('nav.about')}">{t('nav.about')}</a>
-          <a href="/ktwardowski/${lang}/portfolio/" aria-label="Portfolio">Portfolio</a>
-          <a href="/ktwardowski/${lang}/contact/" aria-label="{t('nav.contact')}">{t('nav.contact')}</a>
+          <a href="/ktwardowski/" aria-label="Strona główna">Strona główna</a>
+          <a href="/ktwardowski/about/" aria-label="O mnie">O mnie</a>
+          <a href="/ktwardowski/portfolio/" aria-label="Portfolio">Portfolio</a>
+          <a href="/ktwardowski/contact/" aria-label="Kontakt">Kontakt</a>
         </div>
       </div>
     </header>
@@ -58,26 +43,26 @@ const translatePath = useTranslatedPath(lang);
       <div class="fleft">
         <ul>
           <li>
-            <a href="/ktwardowski/${lang}/"> {t('nav.home')}</a>
+            <a href="/ktwardowski/">Strona główna</a>
           </li>
           <li>
-            <a href="/ktwardowski/${lang}/about/">{t('nav.about')}</a>
+            <a href="/ktwardowski/about/">O mnie</a>
           </li>
           <li>
-            <a href="/ktwardowski/${lang}/portfolio/">Portfolio</a>
+            <a href="/ktwardowski/portfolio/">Portfolio</a>
           </li>
           <li>
-            <a href="/ktwardowski/${lang}/contact/">{t('nav.contact')}</a>
+            <a href="/ktwardowski/contact/">Kontakt</a>
           </li>
         </ul>
         <h4>-Kacper Twardowski 2024-</h4>
       </div>
       <div class="fright">
-        <h4>{t('footer.text')}</h4>
+        <h4>Znajdź mnie w sieci</h4>
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/"
-              >LinkedIn</a
+              >Linkedin</a
             >
           </li>
           <li>
