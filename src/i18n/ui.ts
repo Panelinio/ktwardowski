@@ -10,7 +10,7 @@ export const showDefaultLang = false;
 export const ui = {
   en: {
     'nav.home': 'Home',
-    'nav.about': 'About me',
+    'nav.about': 'About',
     'nav.contact': 'Contact',
     'footer.text': 'You can also find me here',
   },

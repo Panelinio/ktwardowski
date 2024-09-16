@@ -58,4 +58,35 @@ const translatePath = useTranslatedPath(lang);
     .language{
         margin: 5px 0 0 370px;
     }
+
+    @container main (max-width: 1200px) {
+        .language{
+            margin: 5px 0 0 90px;
+        }
+
+        .dropdown{
+            top: 89px;
+            width: 20%;
+        }
+    }
+
+    @container main (max-width: 768px) {
+        .language{
+            margin: 5px 30px 0 100px;
+        }
+
+        .dropdown{
+            top: 79px;
+            right: 0;
+            width: 40%;
+        }
+
+        .dropdown.active {
+            height: 150px;
+        }
+
+        .dropdownNav a{
+            margin: 1rem;
+        }
+    }
 </style>
