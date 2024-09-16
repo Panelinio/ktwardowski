@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+---
+
+<Layout title="About Me">
+  <main>
+    <article class="landing">
+      <section class="left">
+        <h1>A few <span>words</span> about me</h1>
+        <p>
+          I come from Lower Silesia, where I also completed my technical high
+          school in IT. Since a computer appeared in my home, I started creating
+          my works in Paint. <br /><br />I built my first applications in
+          Scratch, but I have always been drawn to graphics. My passion for
+          cartoons and computer games inspired me to create my own comic series,
+          which I continue to develop to this day. I constantly have new ideas
+          for various plots and stories.
+        </p>
+      </section>
+      <section class="right"></section>
+    </article>
+    <article class="landing-blue">
+      <section class="leftb"></section>
+      <section class="rightb">
+        <p>
+          In middle school, I managed to buy my first computer. My first graphic
+          works were created using the "sketchbook-scanner-mouse" method (this
+          involved creating a drawing on paper, scanning it with a scanner, and
+          tracing it using a mouse). It was only in technical high school, where
+          I also learned web technologies, that I invested in a graphics tablet.
+          Both devices serve me to this day. <br /><br />I wanted to further
+          develop my skills, so I looked for a job that would allow me to pursue
+          my passion. Thanks to a cousin's recommendation, I became interested
+          in the Symfony framework. Appropriate courses helped me discover a
+          modern approach to coding websites, which significantly exceeded the
+          patterns known from school.
+        </p>
+      </section>
+    </article>
+    <article class="landingDown">
+      <section class="left">
+        <p>
+          However, I ended up working in an advertising agency and retail sales.
+          Here I discovered how to handle commercial graphics from the inside.
+          However, I knew that it would be difficult for me to find a job in the
+          IT industry in my area. Therefore, my heart and mind led me to Kalisz.
+          I also decided to study IT part-time in Wrocław.<br /><br />
+          I found a job as IT Support, which also allowed me to polish my IT knowledge.
+          In the meantime, I was preparing my portfolio and accepting smaller graphic
+          assignments. I also participated in online forums, where I helped others
+          with their computer or programming problems.
+        </p><p>
+          Currently, I have no intention of stopping - there is still much to
+          learn and many dreams to fulfill ahead of me.
+        </p>
+      </section>
+      <section class="right"></section>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  p {
+    font-size: 1.2rem;
+    font-weight: 350;
+    max-width: 65ch;
+    text-wrap: balance;
+  }
+
+  @container main (max-width: 768px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
