@@ -4,7 +4,6 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "../i18n/utils";
-import LanguagePicker from "../components/LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -15,22 +14,22 @@ const translatePath = useTranslatedPath(lang);
   <div class="fleft">
     <ul>
       <li>
-        <a href={translatePath("/")} aria-label={t("nav.home")}
+        <a href={translatePath("/ktwardowski/")} aria-label={t("nav.home")}
           >{t("nav.home")}</a
         >
       </li>
       <li>
-        <a href={translatePath("/about/")} aria-label={t("nav.about")}
+        <a href={translatePath("/ktwardowski/about/")} aria-label={t("nav.about")}
           >{t("nav.about")}</a
         >
       </li>
       <li>
-        <a href={translatePath("/portfolio/")} aria-label="Portfolio"
+        <a href={translatePath("/ktwardowski/portfolio/")} aria-label="Portfolio"
           >Portfolio</a
         >
       </li>
       <li>
-        <a href={translatePath("/contact/")} aria-label={t("nav.contact")}
+        <a href={translatePath("/ktwardowski/contact/")} aria-label={t("nav.contact")}
           >{t("nav.contact")}</a
         >
       </li>
