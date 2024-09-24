@@ -1,0 +1,188 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<footer>
+  <div class="fleft">
+    <ul>
+      <li>
+        <a href="/ktwardowski/" aria-label="Strona główna"
+          >"Strona główna"</a
+        >
+      </li>
+      <li>
+        <a href="/ktwardowski/about/" aria-label="O mnie"
+          >"O mnie"</a
+        >
+      </li>
+      <li>
+        <a href="/ktwardowski/portfolio/" aria-label="Portfolio"
+          >Portfolio</a
+        >
+      </li>
+      <li>
+        <a href="/ktwardowski/contact/" aria-label="Kontakt"
+          >"Kontakt"</a
+        >
+      </li>
+    </ul>
+    <h4>-Kacper Twardowski 2024-</h4>
+  </div>
+  <div class="fright">
+    <h4>Znajdziesz mnie tutaj</h4>
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/"
+          >LinkedIn</a
+        >
+      </li>
+      <li>
+        <a href="https://www.instagram.com/_ktwardowski_/">Instagram</a>
+      </li>
+      <li>
+        <a href="https://github.com/Panelinio">GitHub</a>
+      </li>
+      <li>
+        <a href="mailto:kacper.tw150@gmail.com">Email</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<style>
+  footer {
+    padding: 0px 180px 0px 180px;
+    height: 200px;
+    letter-spacing: 1.5px;
+    background-color: var(--accent-dark);
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url("/ktwardowski/halftonekt.svg") repeat;
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  footer * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fleft,
+  .fright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer a {
+    display: block;
+    margin-top: 5px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0.2rem;
+    font-weight: 400;
+    transition: all 0.2s ease-out 0.5ms;
+  }
+
+  footer a:hover {
+    color: var(--dark);
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer ul li {
+    margin: 0 10px;
+  }
+
+  footer h4 {
+    font-size: 1.3rem;
+    margin: 0.5rem 1rem;
+  }
+
+  @container main (max-width: 1200px) {
+    footer {
+      padding: 0 1rem 0 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4 {
+      font-size: 1rem;
+    }
+
+    footer a {
+      font-size: 0.9rem;
+    }
+
+    footer ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li {
+      margin: 5px;
+    }
+  }
+
+  @container main (max-width: 768px) {
+    footer {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4 {
+      font-size: 0.6rem;
+      margin: 1rem 0.5rem;
+    }
+
+    footer a {
+      font-size: 0.7rem;
+    }
+
+    footer ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li {
+      margin: 5px;
+    }
+  }
+</style>

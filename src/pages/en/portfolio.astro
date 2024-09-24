@@ -1,118 +1,118 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
 ---
 
 <Layout title="Portfolio">
   <main>
     <h1>Portfolio</h1>
     <div class="buttons">
-      <button class="filter-button" data-category="art">Rysunki</button>
-      <button class="filter-button" data-category="graphic">Grafika</button>
+      <button class="filter-button" data-category="art">Drawings</button>
+      <button class="filter-button" data-category="graphic">Graphics</button>
       <button class="filter-button" data-category="webdesign">Web Design</button>
     </div>
     <div class="cards" id="drawing" data-category="art">
       <Card
         src="/ktwardowski/portfolio/art/verferia.jpg"
         title="Verferia"
-        body="Dopieszczony projekt potwora do jednego z moich komiksów. Za niego otrzymałem wyróżnienie i nagrodę w konkursie."
+        body="A refined monster project for one of my comics. I received a distinction and an award in a competition for it."
       />
       <Card
         src="/ktwardowski/portfolio/art/cherry.jpg"
-        title="Kwitnąca wiśnia"
-        body="Tworząc ten rysunek chciałem uzyskać efekt japońskich malowideł."
+        title="Blooming Cherry"
+        body="Creating this drawing, I wanted to achieve the effect of Japanese paintings."
       />
       <Card
         src="/ktwardowski/portfolio/art/wiedźmin.jpg"
-        title="Wiedźmin"
-        body="Portret Geralta z Rivii, bohatera sagi Andrzeja Sapkowskiego."
+        title="The Witcher"
+        body="A portrait of Geralt of Rivia, the hero of Andrzej Sapkowski's saga."
       />
       <Card
         src="/ktwardowski/portfolio/art/las.jpg"
-        title="Las"
-        body="Odzworowane zdjęcie lasu wykonane przeze mnie."
+        title="Forest"
+        body="A recreated photo of a forest taken by me."
       />
       <Card
         src="/ktwardowski/portfolio/art/łąka.jpg"
-        title="Łąka"
-        body="Wieczorny widok łąki niedaleko mojego rodzinnego domu."
+        title="Meadow"
+        body="An evening view of a meadow near my hometown."
       />
       <Card
         src="/ktwardowski/portfolio/art/krokodyl.jpg"
-        title="Krokodyl z parasolem"
-        body="Rysunek stworzony w ramach wyzwania ilustratorki."
+        title="Crocodile with an Umbrella"
+        body="A drawing created as part of an illustrator's challenge."
       />
       <Card
         src="/ktwardowski/portfolio/art/królik.jpg"
-        title="Królik"
-        body="Zadaniem było narysowanie magicznego królika, zatem mojemu dorysowałem magiczne przedmioty z gry League of Legends."
+        title="Rabbit"
+        body="The task was to draw a magical rabbit, so I added magical items from the game League of Legends to mine."
       />
       <Card
-      src="/ktwardowski/portfolio/art/dziewczynakawa.jpg"
-      title="Sweter w kolorze kawy"
-      body="Ilustracja do okładki książki."
+        src="/ktwardowski/portfolio/art/dziewczynakawa.jpg"
+        title="Sweater in Coffee Color"
+        body="An illustration for a book cover."
       />
       <Card
       src="/ktwardowski/portfolio/art/httyd.jpg"
-      title="Szczerbatek"
-      body="Kocham serię Jak Wytresować Smoka <3"
-      />
-      <Card
+      title="Toothless"
+      body="I love the How to Train Your Dragon series <3"
+    />
+    <Card
       src="/ktwardowski/portfolio/art/duch.jpg"
       title="Napstablook"
-      body="Zadaniem było narysowanie ducha, więc postawiłem na Napstablooka z gry Undertale."
-      />
+      body="The task was to draw a ghost, so I chose Napstablook from the game Undertale."
+    />
     </div>
     <div class="cards" id="graphic" data-category="graphic">
       <Card
         src="/ktwardowski/portfolio/graphic/devilgarage.jpg"
         title="Devil Garage"
-        body="Logo firmy detailingowej. Zleceniodawca chciał, aby zawierało diabła trzymającego polerkę."
+        body="Logo for a detailing company. The client wanted it to include a devil holding a polisher."
       />
       <Card
         src="/ktwardowski/portfolio/graphic/invetec.jpg"
         title="Invetec"
-        body="Firma specjalizująca się w częściach samochodowych. Logo miało być nowoczesne i proste."
+        body="A company specializing in car parts. The logo was supposed to be modern and simple."
       />
       <Card
         src="/ktwardowski/portfolio/graphic/loggr.jpg"
         title="MT House"
-        body="Projekt logo dla firmy budowlanej. Zaprojektowane z myślą o nowoczesnym stylu i prostocie - chciałem zawrzeć w nim litery M oraz T."
+        body="Logo design for a construction company. Designed with a modern style and simplicity in mind - I wanted to include the letters M and T."
       />
       <Card
         src="/ktwardowski/portfolio/graphic/it.jpg"
         title="BSOD Day"
-        body="Grafika nawiązująca do słynnej awarii Crowdstrike. Pozdrowienia i słowa otuchy dla każdego informatyka jako słynny Blue Screen of Death."
+        body="Graphic referring to the famous Crowdstrike failure. Greetings and words of encouragement to every IT specialist as the famous Blue Screen of Death."
       />
       <Card
         src="/ktwardowski/portfolio/graphic/esta.jpg"
         title="Esta-Travel"
-        body="Chciałem uzyskać wizualizację amerykańskiego transportu - takie też było zlecenie. Efekt? Połączenie ciężarówki oraz orła."
+        body="Creating this logo, I was guided by the visualization of American transport - that was also the assignment. The result? A combination of a truck and an eagle."
       />
     </div>
     <div class="cards" id="web" data-category="webdesign">
       <Card
         src="/ktwardowski/portfolio/web/abstratec.jpg"
         title="Abstratec"
-        body="Tworząc Abstratec kierowałem się stylem zwanym 'Generative Design'. Postawiłem jednak na grafiki stworzone przeze mnie."
+        body="Creating Abstratec, I was guided by the style called 'Generative Design', but I relied on my graphic design skills."
       />
       <Card
         src="/ktwardowski/portfolio/web/todo.jpg"
         title="TODO List"
-        body="Strona internetowa z listą zadań do wykonania. Haczyk w tym, że nie została tu napisana ani jedna linijka kodu JavaScript."
+        body="A website with a to-do list. The catch is that not a single line of JavaScript code was written here."
       />
       <Card
         src="/ktwardowski/portfolio/web/watch.jpg"
         title="Wonderful Watch"
-        body="Chciałem zaprojektować stronę z zegarem, która wyłamuje się na tle innych. W tym projekcie połączyłem podstawę JavaScript z nowoczesnym designem."
+        body="I wanted to design a clock website that stands out from others. In this project, I combined basic JavaScript with modern design."
       />
       <Card
         src="/ktwardowski/portfolio/web/strefa.jpg"
-        title="Strefa Menadżera"
-        body="Mój największy projekt w Symfony. Jest to aplikacja webowa dla menadżerów firmy. Zalogowany administrator może dodawać, edytować oraz usuwać posty czy kategorie. Na ten moment to jedynie funkcjonalny protopyp/szablon."
+        title="Manager's Zone"
+        body="My biggest project in Symfony. It is a web application for company managers. A logged-in administrator can add, edit, and delete posts or categories. At the moment, it is only a functional prototype/template."
       />
     </div>
-  </main>
+    </main>
   <dialog id="imageModal" class="modal" aria-modal="true" role="dialog">
     <button class="close" role="button" tabindex="0" aria-label="Close">&times;</button>
     <img class="modal-content" id="modalImage" alt="Przybliżony obrazek" />

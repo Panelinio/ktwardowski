@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+} from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout title="Homepage">
+  <main>
+    <article class="landing">
+      <section class="left">
+        <h1>Hello, I'm <span>Kacper</span></h1>
+        <p>
+          Coffee lover, rock music enthusiast, and cartoon fan. On a daily basis, I work as a <strong>Web Developer</strong> and <strong>Graphic Designer</strong>, and in my free time, I indulge in drawing and going to the gym.
+        </p>
+        <a href={translatePath("/ktwardowski/about")} class="a-button">More about me</a>
+      </section>
+      <section class="right">
+        <img src="/avokr.png" alt="My photo" aria-label="My photo" />
+      </section>
+    </article>
+    <article class="landing-blue">
+      <section class="leftb"></section>
+      <section class="rightb">
+        <h1>Goals</h1>
+        <p>
+          My projects are not the work of generators or ready-made templates. I approach each task independently and from scratch, appropriately adapting to the guidelines. I want to do what I love in life. Therefore, I am developing in the fields of programming, graphics, and drawing. My goal is to create something that will not only be my passion but also a job that I can perform with pleasure.
+        </p>
+      </section>
+    </article>
+  </main>
+  <article class="landing">
+    <section class="left">
+      <h1>I design, <strong>code,</strong> draw</h1>
+      <p>
+        I invite you to check out my portfolio, whether you are interested in websites, web applications, logos, or simple illustrations.
+      </p>
+      <a href={translatePath("/ktwardowski/portfolio/")} class="a-button">See my work</a>
+    </section>
+    <section class="right"></section>
+  </article>
+</Layout>

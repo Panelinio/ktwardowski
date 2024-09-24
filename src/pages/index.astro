@@ -1,5 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <Layout title="Strona główna">
@@ -13,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
           > i <strong>Graphic Designer</strong>, a w wolnym czasie oddaję się
           rysunkom i siłowni.
         </p>
-        <a href="/ktwardowski/about/" class="a-button">Więcej o mnie</a>
+        <a href="/ktwardowski/about" class="a-button">Więcej o mnie</a>
       </section>
       <section class="right">
         <img src="/ktwardowski/avokr.png" alt="Moje zdjęcie" aria-label="Moje zdjęcie" />
