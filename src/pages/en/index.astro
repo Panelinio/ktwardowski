@@ -1,5 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+} from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <Layout title="Homepage">
@@ -10,10 +17,10 @@ import Layout from "../../layouts/Layout.astro";
         <p>
           Coffee lover, rock music enthusiast, and cartoon fan. On a daily basis, I work as a <strong>Web Developer</strong> and <strong>Graphic Designer</strong>, and in my free time, I indulge in drawing and going to the gym.
         </p>
-        <a href="/en/about/" class="a-button">More about me</a>
+        <a href={translatePath("/ktwardowski/about")} class="a-button">More about me</a>
       </section>
       <section class="right">
-        <img src="/en/avokr.png" alt="My photo" aria-label="My photo" />
+        <img src="/avokr.png" alt="My photo" aria-label="My photo" />
       </section>
     </article>
     <article class="landing-blue">
@@ -32,7 +39,7 @@ import Layout from "../../layouts/Layout.astro";
       <p>
         I invite you to check out my portfolio, whether you are interested in websites, web applications, logos, or simple illustrations.
       </p>
-      <a href="/en/portfolio/" class="a-button">See my work</a>
+      <a href={translatePath("/ktwardowski/portfolio/")} class="a-button">See my work</a>
     </section>
     <section class="right"></section>
   </article>

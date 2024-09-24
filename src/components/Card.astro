@@ -10,7 +10,7 @@ const { src, title, body } = Astro.props;
 
 <article class="link-card">
   <section class="image">
-    <img src={src} alt={body} />
+    <img src={src} alt={body} loading="lazy"/>
   </section>
   <section class="desc">
     <h2>
