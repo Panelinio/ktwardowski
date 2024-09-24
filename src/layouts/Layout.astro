@@ -1,33 +1,82 @@
----
-import {
-  getLangFromUrl,
-} from "../i18n/utils";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-const lang = getLangFromUrl(Astro.url);
-
-interface Props {
-  title: string;
-}
-const { title } = Astro.props;
----
-
 <!doctype html>
-<html lang={lang}>
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Web Developer & Graphic Designer" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/ktwardowski/favicon.svg" />
     <meta name="generator" content="Kacper Twardowski" />
     <meta name="author" content="Kacper Twardowski" />
-    <title>{title}</title>
+    <title>Kacper Twardowski</title>
   </head>
   <body>
-    <Header />
-      <slot />
-    <Footer />
+    <header>
+      <img src="/ktwardowski/logo.svg" alt="Logo" class="logo" aria-label="Logo" />
+      <div class="inside">
+        <div class="web">
+          <a href="/ktwardowski/" aria-label="Strona główna">Kacper Twardowski</a>
+          <p>Web Developer & Graphic Designer</p>
+        </div>
+        <nav>
+          <a href="/ktwardowski/" aria-label="Strona główna">Strona główna</a>
+          <a href="/ktwardowski/about/" aria-label="O mnie">O mnie</a>
+          <a href="/ktwardowski/portfolio/" aria-label="Portfolio">Portfolio</a>
+          <a href="/ktwardowski/contact/" aria-label="Kontakt">Kontakt</a>
+        </nav>
+        <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menuNav">
+          <a href="/ktwardowski/" aria-label="Strona główna">Strona główna</a>
+          <a href="/ktwardowski/about/" aria-label="O mnie">O mnie</a>
+          <a href="/ktwardowski/portfolio/" aria-label="Portfolio">Portfolio</a>
+          <a href="/ktwardowski/contact/" aria-label="Kontakt">Kontakt</a>
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer>
+      <div class="fleft">
+        <ul>
+          <li>
+            <a href="/ktwardowski/">Strona główna</a>
+          </li>
+          <li>
+            <a href="/ktwardowski/about/">O mnie</a>
+          </li>
+          <li>
+            <a href="/ktwardowski/portfolio/">Portfolio</a>
+          </li>
+          <li>
+            <a href="/ktwardowski/contact/">Kontakt</a>
+          </li>
+        </ul>
+        <h4>-Kacper Twardowski 2024-</h4>
+      </div>
+      <div class="fright">
+        <h4>Znajdź mnie w sieci</h4>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/kacper-twardowski-a7b0a42a3/"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/_ktwardowski_/">Instagram</a>
+          </li>
+          <li>
+            <a href="https://github.com/Panelinio">GitHub</a>
+          </li>
+          <li>
+            <a href="mailto:kacper.tw150@gmail.com">Mail</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
 <script>
@@ -58,6 +107,30 @@ const { title } = Astro.props;
     scroll-behavior: smooth;
   }
 
+  footer {
+    padding: 0px 180px 0px 180px;
+    height: 200px;
+    letter-spacing: 1.5px;
+    background-color: var(--accent-dark);
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url("/halftonekt.svg") repeat;
+    opacity: 0.05;
+    z-index: 0;
+  }
+
   .landing {
     display: flex;
     padding-top: 6rem;
@@ -82,12 +155,62 @@ const { title } = Astro.props;
     bottom: -200px;
     left: 800px;
     position: absolute;
-    width: 75%;
-    height: 75%;
+    width: 75%; /* Increase width */
+    height: 75%; /* Increase height */
     background: url("/halfball.svg") no-repeat;
-    background-size: cover;
+    background-size: cover; /* Ensure the background covers the entire area */
     opacity: 0.2;
     z-index: 0;
+  }
+
+  footer * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fleft,
+  .fright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer a {
+    display: block;
+    margin-top: 5px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0.2rem;
+    font-weight: 400;
+    transition: all 0.2s ease-out 0.5ms;
+  }
+
+  footer a:hover {
+    color: var(--dark);
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer ul li {
+    margin: 0 10px;
+  }
+
+  footer h4 {
+    font-size: 1.3rem;
+    margin: 0.5rem 1rem;
+  }
+
+  .logo {
+    width: 75px;
+    height: 75px;
+    margin-left: 1rem;
   }
 
   body {
@@ -102,6 +225,120 @@ const { title } = Astro.props;
     font-size: 15px;
     line-height: 1.6;
     min-height: 95vh;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    background-color: var(--dark);
+    z-index: 1000;
+    box-shadow: inset 0 -1px 0 0 var(--accent-dark);
+  }
+
+  header nav a {
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  header nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    left: 0;
+    background: var(--accent);
+    transition:
+      width 0.4s ease,
+      left 0.4s ease;
+  }
+
+  header nav a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .menu{
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background-color: var(--accent-dark);
+    width: 40%;
+    height: 0; /* Use max-height instead of height */
+    overflow: hidden; /* Hide overflow */
+    z-index: 1000;
+    transition: height 0.5s ease;
+  }
+
+  .menu.active {
+      height: 250px;
+    }
+
+  .menuNav{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .inside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .web {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 1rem 0rem 0rem;
+  }
+
+  .web a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    text-decoration: none;
+  }
+
+  .web p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #f1f3e9;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+  }
+
+  nav a {
+    margin-left: 2.5rem;
+    transition: all 0.2s ease-out 0.5ms;
+  }
+
+  nav a:hover {
+    color: var(--accent);
   }
 
   p {
@@ -154,10 +391,9 @@ const { title } = Astro.props;
     flex-direction: column;
   }
 
-  .left p,
-  .rightb p {
-    margin-bottom: 3rem;
-  }
+  .left p, .rightb p{
+      margin-bottom: 3rem;
+    }
 
   h2 {
     font-size: 2.3rem;
@@ -178,8 +414,7 @@ const { title } = Astro.props;
     color: var(--accent);
   }
 
-  button,
-  .a-button {
+  button, .a-button {
     background-color: var(--white);
     border: none;
     border-radius: 0.5rem;
@@ -192,8 +427,7 @@ const { title } = Astro.props;
     transition: all 0.2s ease-out;
   }
 
-  button:hover,
-  .a-button:hover {
+  button:hover, .a-button:hover {
     background-color: var(--accent);
     transform: scale(1.1);
   }
@@ -244,83 +478,189 @@ const { title } = Astro.props;
   }
 
   @container main (max-width: 1200px) {
-    .right,
-    .leftb {
+
+    .right, .leftb {
       display: none;
     }
 
-    .landing {
+    .web a{
+      font-size: 1.3rem;
+    }
+
+    .web p{
+      font-size: 1rem;
+    }
+
+    nav{
+      font-size: 0.8rem;
+    }
+
+    nav a{
+      margin-left: 1.5rem;
+    }
+
+    .landing{
       height: 100vh;
       padding-top: 2rem;
     }
 
-    .landing::before,
-    .landingDown::before {
+    .landing::before, .landingDown::before{
       left: 500px;
       bottom: -370px;
     }
 
-    h1 {
+    h1{
       font-size: 2.3rem;
       margin-top: 1rem;
     }
 
-    .left p {
+    .left p{
       font-size: 1rem;
       margin-bottom: 2rem;
     }
 
-    .left,
-    .rightb {
+    .left, .rightb{
       width: 100%;
       padding: 1rem;
       margin: 2rem;
     }
-  }
+
+    footer{
+      padding: 0 1rem 0 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4{
+      font-size: 1rem;
+    }
+
+    footer a{
+      font-size: 0.9rem;
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li{
+      margin: 5px;
+    }
+
+}
+
 
   @container main (max-width: 768px) {
-    .right,
-    .leftb {
+    .web, nav, .right, .leftb {
       display: none;
     }
 
-    .landing {
+    .inside {
+      justify-content: end;
+    }
+
+    .hamburger {
+      display: flex;
+      height: 22px;
+      width: 22px;
+    }
+
+    .hamburger .line {
+      width: 100%;
+      height: 3px;
+      background-color: var(--white);
+      border-radius: 5px;
+    }
+
+    .menu{
+      display: block;
+    }
+
+    .menuNav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .menuNav a{
+      margin: 0rem;
+      color: var(--white);
+      font-size: 1.1rem;
+      padding: 0.8rem;
+      text-decoration: none;
+    }
+
+    .landing{
       height: 100vh;
       padding-top: 2rem;
     }
 
-    .landing::before,
-    .landingDown::before {
+    .landing::before, .landingDown::before{
       left: 200px;
       bottom: -270px;
     }
 
-    h1 {
+
+    h1{
       font-size: 2.3rem;
       margin-top: 1rem;
     }
 
-    .left p,
-    .rightb p {
+    .left p, .rightb p{
       font-size: 1rem;
       margin-bottom: 2rem;
     }
 
-    .left,
-    .rightb {
+    .left, .rightb {
       width: 100%;
       padding: 1rem;
       margin: 0.5rem;
     }
 
-    .landingDown,
-    .landing-blue {
+    .landingDown, .landing-blue{
       height: 100vh;
       padding: 2rem 0 2rem 0;
     }
 
-    .desc p {
+    .desc p{
       display: none;
     }
-  }
+
+    footer{
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+    }
+
+    footer h4{
+      font-size: 0.6rem;
+      margin: 1rem 0.5rem;
+    }
+
+    footer a{
+      font-size: 0.7rem;
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer ul li{
+      margin: 5px;
+    }
+}
 </style>
